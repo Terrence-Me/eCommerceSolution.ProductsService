@@ -4,16 +4,27 @@
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+       "MYSQL_HOST":"localhost",
+        "MYSQL_PASSWORD":"admin",
+        "MYSQL_USER":"root",
+        "MYSQL_DATABASE":"ecommerceproductsdatabase",
+        "MYSQL_PORT":"3306"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "http://localhost:5041"
+      "applicationUrl": "http://localhost:5041",
+      "launchUrl": "swagger"
     },
     "https": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MYSQL_HOST": "localhost",
+        "MYSQL_PASSWORD": "admin",
+        "MYSQL_USER": "root",
+        "MYSQL_DATABASE": "ecommerceproductsdatabase",
+        "MYSQL_PORT": "3306"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7236;http://localhost:5041",
@@ -23,7 +34,12 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MYSQL_HOST": "localhost",
+        "MYSQL_PASSWORD": "admin",
+        "MYSQL_USER": "root",
+        "MYSQL_DATABASE": "ecommerceproductsdatabase",
+        "MYSQL_PORT": "3306"
       }
     },
     "Docker": {
