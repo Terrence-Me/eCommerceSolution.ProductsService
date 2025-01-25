@@ -75,8 +75,11 @@ public class ProductsService(IProductsRepository productsRepository, IMapper map
 
         IEnumerable<Product> products = await _productsRepository.GetProductsAsync();
 
+        IEnumerable<ProductResponse?> productResponses = _mapper.Map<IEnumerable<ProductResponse>>(products); //Invokes ProductToProductResponseMappingProfile
+        return productResponses.ToList();
 
-        return _mapper.Map<List<ProductResponse?>>(products);
+
+        //return _mapper.Map<List<ProductResponse?>>(products);
     }
 
     public async Task<List<ProductResponse?>> GetProductsByConditionAsync(Expression<Func<Product, bool>> conditionExpression)
