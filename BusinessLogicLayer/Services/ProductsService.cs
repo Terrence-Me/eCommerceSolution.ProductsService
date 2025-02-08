@@ -52,6 +52,14 @@ public class ProductsService(IProductsRepository productsRepository, IMapper map
         }
         bool isDeleted = await _productsRepository.DeleteProductAsync(productId);
 
+        if (isDeleted)
+        {
+            // Publish message to RabbitMQ
+            var routingKey = "product.delete";
+            var message = new ProductDeletionMessage(existingProduct.ProductId, existingProduct.ProductName);
+            rabbitMQPublisher.Publish<ProductDeletionMessage>(routingKey, message);
+        }
+
         return isDeleted;
     }
 
