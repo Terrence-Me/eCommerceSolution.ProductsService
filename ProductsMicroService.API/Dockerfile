@@ -23,8 +23,8 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENV MYSQL_HOST=localhost
-ENV MYSQL_PASSWORD=admin
-ENV MYSQL_USER=root
+ENV MYSQL_PASSWORD=${MYSQL_PASSWORD}
+ENV MYSQL_USER=${MYSQL_USER}
 ENV MYSQL_DATABASE=ecommerceproductsdatabase
 ENV MYSQL_PORT=3306
 ENTRYPOINT ["dotnet", "ProductsMicroService.API.dll"]
